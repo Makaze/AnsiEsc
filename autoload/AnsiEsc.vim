@@ -44,15 +44,15 @@ function! GetHLHex(group, ground)
     return hex_color
 endfunction
 
-let g:ansi_Black = exists(g:ansi_Black) ? g:ansi_Black : '#1d2021'
-let g:ansi_DarkRed = exists(g:ansi_DarkRed) ? g:ansi_DarkRed : '#cc241d'
-let g:ansi_DarkGreen = exists(g:ansi_DarkGreen) ? g:ansi_DarkGreen : '#98971a'
-let g:ansi_DarkYellow = exists(g:ansi_DarkYellow) ? g:ansi_DarkYellow : '#d79921'
-let g:ansi_DarkBlue = exists(g:ansi_DarkBlue) ? g:ansi_DarkBlue : '#458588'
-let g:ansi_DarkMagenta = exists(g:ansi_DarkMagenta) ? g:ansi_DarkMagenta : '#b16286'
-let g:ansi_DarkCyan = exists(g:ansi_DarkCyan) ? g:ansi_DarkCyan : '#689d6a'
-let g:ansi_LightGray = exists(g:ansi_LightGray) ? g:ansi_LightGray : '#ebdbb2'
-let g:ansi_DarkGray = exists(g:ansi_DarkGray) ? g:ansi_DarkGray : '#a89984'
+let g:ansi_Black = exists("g:ansi_Black") ? g:ansi_Black : '#1d2021'
+let g:ansi_DarkRed = exists("g:ansi_DarkRed") ? g:ansi_DarkRed : '#cc241d'
+let g:ansi_DarkGreen = exists("g:ansi_DarkGreen") ? g:ansi_DarkGreen : '#98971a'
+let g:ansi_DarkYellow = exists("g:ansi_DarkYellow") ? g:ansi_DarkYellow : '#d79921'
+let g:ansi_DarkBlue = exists("g:ansi_DarkBlue") ? g:ansi_DarkBlue : '#458588'
+let g:ansi_DarkMagenta = exists("g:ansi_DarkMagenta") ? g:ansi_DarkMagenta : '#b16286'
+let g:ansi_DarkCyan = exists("g:ansi_DarkCyan") ? g:ansi_DarkCyan : '#689d6a'
+let g:ansi_LightGray = exists("g:ansi_LightGray") ? g:ansi_LightGray : '#ebdbb2'
+let g:ansi_DarkGray = exists("g:ansi_DarkGray") ? g:ansi_DarkGray : '#a89984'
 
 " ---------------------------------------------------------------------
 " AnsiEsc#AnsiEsc: toggles ansi-escape code visualization {{{2
