@@ -1527,269 +1527,269 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    " eight-color handling: {{{3
    " ---------------------
 "   call Decho("set up 8-color highlighting groups")
-   hi ansiBlack             ctermfg=Black      guifg=Black                                        cterm=NONE         gui=NONE
-   hi ansiRed               ctermfg=DarkRed        guifg=DarkRed                                          cterm=NONE         gui=NONE
-   hi ansiGreen             ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=NONE         gui=NONE
-   hi ansiYellow            ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=NONE         gui=NONE
-   hi ansiBlue              ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=NONE         gui=NONE
-   hi ansiMagenta           ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=NONE         gui=NONE
-   hi ansiCyan              ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=NONE         gui=NONE
-   hi ansiWhite             ctermfg=LightGray      guifg=LightGray                                        cterm=NONE         gui=NONE
-   hi ansiGray              ctermfg=DarkGray       guifg=DarkGray                                         cterm=NONE         gui=NONE
+   execute 'hi ansiBlack             ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiRed               ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=NONE         gui=NONE'
+   execute 'hi ansiGreen             ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiYellow            ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=NONE         gui=NONE'
+   execute 'hi ansiBlue              ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiMagenta           ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyan              ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiWhite             ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiGray              ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=NONE         gui=NONE'
 
-   hi ansiDefaultBg         ctermbg=NONE       guibg=NONE                                         cterm=NONE         gui=NONE
-   hi ansiBlackBg           ctermbg=Black      guibg=Black                                        cterm=NONE         gui=NONE
-   hi ansiRedBg             ctermbg=DarkRed        guibg=DarkRed                                          cterm=NONE         gui=NONE
-   hi ansiGreenBg           ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=NONE         gui=NONE
-   hi ansiYellowBg          ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=NONE         gui=NONE
-   hi ansiBlueBg            ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=NONE         gui=NONE
-   hi ansiMagentaBg         ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=NONE         gui=NONE
-   hi ansiCyanBg            ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=NONE         gui=NONE
-   hi ansiWhiteBg           ctermbg=LightGray      guibg=LightGray                                        cterm=NONE         gui=NONE
-   hi ansiGrayBg            ctermbg=DarkGray       guibg=DarkGray                                         cterm=NONE         gui=NONE
+   execute 'hi ansiDefaultBg         ctermbg=NONE       guibg=NONE                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiBlackBg           ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiRedBg             ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenBg           ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowBg          ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueBg            ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaBg         ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanBg            ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteBg           ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayBg            ctermbg=7       guibg=' . g:ansi_DarkGray . '                                         cterm=NONE         gui=NONE'
 
-   hi ansiBlackFg           ctermfg=Black      guifg=Black                                        cterm=NONE         gui=NONE
-   hi ansiRedFg             ctermfg=DarkRed        guifg=DarkRed                                          cterm=NONE         gui=NONE
-   hi ansiGreenFg           ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=NONE         gui=NONE
-   hi ansiYellowFg          ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=NONE         gui=NONE
-   hi ansiBlueFg            ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=NONE         gui=NONE
-   hi ansiMagentaFg         ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=NONE         gui=NONE
-   hi ansiCyanFg            ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=NONE         gui=NONE
-   hi ansiWhiteFg           ctermfg=LightGray      guifg=LightGray                                        cterm=NONE         gui=NONE
-   hi ansiGrayFg            ctermfg=DarkGray       guifg=DarkGray                                         cterm=NONE         gui=NONE
+   execute 'hi ansiBlackFg           ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiRedFg             ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenFg           ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowFg          ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueFg            ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaFg         ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanFg            ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteFg           ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayFg            ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=NONE         gui=NONE'
 
-   hi ansiDefaultReverseBg         ctermbg=NONE       guibg=NONE                                         cterm=reverse         gui=reverse
-   hi ansiBlackReverseBg           ctermbg=Black      guibg=Black                                        cterm=reverse         gui=reverse
-   hi ansiRedReverseBg             ctermbg=DarkRed        guibg=DarkRed                                          cterm=reverse         gui=reverse
-   hi ansiGreenReverseBg           ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=reverse         gui=reverse
-   hi ansiYellowReverseBg          ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=reverse         gui=reverse
-   hi ansiBlueReverseBg            ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=reverse         gui=reverse
-   hi ansiMagentaReverseBg         ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=reverse         gui=reverse
-   hi ansiCyanReverseBg            ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=reverse         gui=reverse
-   hi ansiWhiteReverseBg           ctermbg=LightGray      guibg=LightGray                                        cterm=reverse         gui=reverse
+   execute 'hi ansiDefaultReverseBg         ctermbg=NONE       guibg=NONE                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiBlackReverseBg           ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiRedReverseBg             ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=reverse         gui=reverse'
+   execute 'hi ansiGreenReverseBg           ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiYellowReverseBg          ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=reverse         gui=reverse'
+   execute 'hi ansiBlueReverseBg            ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiMagentaReverseBg         ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=reverse         gui=reverse'
+   execute 'hi ansiCyanReverseBg            ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiWhiteReverseBg           ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=reverse         gui=reverse'
 
-   hi ansiBold                                                                                    cterm=bold         gui=bold
-   hi ansiBoldUnderline                                                                           cterm=bold,underline gui=bold,underline
-   hi ansiBoldBlack         ctermfg=Black      guifg=Black                                        cterm=bold         gui=bold
-   hi ansiBoldRed           ctermfg=DarkRed        guifg=DarkRed                                          cterm=bold         gui=bold
-   hi ansiBoldGreen         ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=bold         gui=bold
-   hi ansiBoldYellow        ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=bold         gui=bold
-   hi ansiBoldBlue          ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=bold         gui=bold
-   hi ansiBoldMagenta       ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=bold         gui=bold
-   hi ansiBoldCyan          ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=bold         gui=bold
-   hi ansiBoldWhite         ctermfg=LightGray      guifg=LightGray                                        cterm=bold         gui=bold
-   hi ansiBoldGray          ctermbg=DarkGray       guibg=DarkGray                                         cterm=bold         gui=bold
+   execute 'hi ansiBold                                                                                    cterm=bold         gui=bold'
+   execute 'hi ansiBoldUnderline                                                                           cterm=bold,underline gui=bold,underline'
+   execute 'hi ansiBoldBlack         ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiBoldRed           ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=bold         gui=bold'
+   execute 'hi ansiBoldGreen         ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiBoldYellow        ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=bold         gui=bold'
+   execute 'hi ansiBoldBlue          ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiBoldMagenta       ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=bold         gui=bold'
+   execute 'hi ansiBoldCyan          ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiBoldWhite         ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiBoldGray          ctermbg=7       guibg=' . g:ansi_DarkGray . '                                         cterm=bold         gui=bold'
 
-   hi ansiBlackBold         ctermbg=Black      guibg=Black                                        cterm=bold         gui=bold
-   hi ansiRedBold           ctermbg=DarkRed        guibg=DarkRed                                          cterm=bold         gui=bold
-   hi ansiGreenBold         ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=bold         gui=bold
-   hi ansiYellowBold        ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=bold         gui=bold
-   hi ansiBlueBold          ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=bold         gui=bold
-   hi ansiMagentaBold       ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=bold         gui=bold
-   hi ansiCyanBold          ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=bold         gui=bold
-   hi ansiWhiteBold         ctermbg=LightGray      guibg=LightGray                                        cterm=bold         gui=bold
+   execute 'hi ansiBlackBold         ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiRedBold           ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=bold         gui=bold'
+   execute 'hi ansiGreenBold         ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiYellowBold        ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=bold         gui=bold'
+   execute 'hi ansiBlueBold          ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiMagentaBold       ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=bold         gui=bold'
+   execute 'hi ansiCyanBold          ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiWhiteBold         ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=bold         gui=bold'
 
-   hi ansiReverse                                                                                 cterm=reverse      gui=reverse
-   hi ansiReverseUnderline                                                                        cterm=reverse,underline gui=reverse,underline
-   hi ansiReverseBold                                                                             cterm=reverse,bold gui=reverse,bold
-   hi ansiReverseBoldUnderline                                                                    cterm=reverse,bold,underline gui=reverse,bold,underline
-   hi ansiReverseBlack      ctermfg=Black      guifg=Black                                        cterm=reverse         gui=reverse
-   hi ansiReverseRed        ctermfg=DarkRed        guifg=DarkRed                                          cterm=reverse         gui=reverse
-   hi ansiReverseGreen      ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=reverse         gui=reverse
-   hi ansiReverseYellow     ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=reverse         gui=reverse
-   hi ansiReverseBlue       ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=reverse         gui=reverse
-   hi ansiReverseMagenta    ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=reverse         gui=reverse
-   hi ansiReverseCyan       ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=reverse         gui=reverse
-   hi ansiReverseWhite      ctermfg=LightGray      guifg=LightGray                                        cterm=reverse         gui=reverse
-   hi ansiReverseGray       ctermfg=DarkGray       guifg=DarkGray                                         cterm=reverse         gui=reverse
+   execute 'hi ansiReverse                                                                                 cterm=reverse      gui=reverse'
+   execute 'hi ansiReverseUnderline                                                                        cterm=reverse,underline gui=reverse,underline'
+   execute 'hi ansiReverseBold                                                                             cterm=reverse,bold gui=reverse,bold'
+   execute 'hi ansiReverseBoldUnderline                                                                    cterm=reverse,bold,underline gui=reverse,bold,underline'
+   execute 'hi ansiReverseBlack      ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseRed        ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseGreen      ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseYellow     ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseBlue       ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseMagenta    ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseCyan       ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseWhite      ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseGray       ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=reverse         gui=reverse'
 
-   hi ansiStandout                                                                                cterm=standout     gui=standout
-   hi ansiStandoutBlack     ctermfg=Black      guifg=Black                                        cterm=standout     gui=standout
-   hi ansiStandoutRed       ctermfg=DarkRed        guifg=DarkRed                                          cterm=standout     gui=standout
-   hi ansiStandoutGreen     ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=standout     gui=standout
-   hi ansiStandoutYellow    ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=standout     gui=standout
-   hi ansiStandoutBlue      ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=standout     gui=standout
-   hi ansiStandoutMagenta   ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=standout     gui=standout
-   hi ansiStandoutCyan      ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=standout     gui=standout
-   hi ansiStandoutWhite     ctermfg=LightGray      guifg=LightGray                                        cterm=standout     gui=standout
-   hi ansiStandoutGray      ctermfg=DarkGray       guifg=DarkGray                                         cterm=standout     gui=standout
+   execute 'hi ansiStandout                                                                                cterm=standout     gui=standout'
+   execute 'hi ansiStandoutBlack     ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=standout     gui=standout'
+   execute 'hi ansiStandoutRed       ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=standout     gui=standout'
+   execute 'hi ansiStandoutGreen     ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=standout     gui=standout'
+   execute 'hi ansiStandoutYellow    ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=standout     gui=standout'
+   execute 'hi ansiStandoutBlue      ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=standout     gui=standout'
+   execute 'hi ansiStandoutMagenta   ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=standout     gui=standout'
+   execute 'hi ansiStandoutCyan      ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=standout     gui=standout'
+   execute 'hi ansiStandoutWhite     ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=standout     gui=standout'
+   execute 'hi ansiStandoutGray      ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=standout     gui=standout'
 
-   hi ansiItalic                                                                                  cterm=italic       gui=italic
-   hi ansiItalicBlack       ctermfg=Black      guifg=Black                                        cterm=italic       gui=italic
-   hi ansiItalicRed         ctermfg=DarkRed        guifg=DarkRed                                          cterm=italic       gui=italic
-   hi ansiItalicGreen       ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=italic       gui=italic
-   hi ansiItalicYellow      ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=italic       gui=italic
-   hi ansiItalicBlue        ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=italic       gui=italic
-   hi ansiItalicMagenta     ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=italic       gui=italic
-   hi ansiItalicCyan        ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=italic       gui=italic
-   hi ansiItalicWhite       ctermfg=LightGray      guifg=LightGray                                        cterm=italic       gui=italic
-   hi ansiItalicGray        ctermfg=DarkGray       guifg=DarkGray                                         cterm=italic       gui=italic
+   execute 'hi ansiItalic                                                                                  cterm=italic       gui=italic'
+   execute 'hi ansiItalicBlack       ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=italic       gui=italic'
+   execute 'hi ansiItalicRed         ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=italic       gui=italic'
+   execute 'hi ansiItalicGreen       ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=italic       gui=italic'
+   execute 'hi ansiItalicYellow      ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=italic       gui=italic'
+   execute 'hi ansiItalicBlue        ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=italic       gui=italic'
+   execute 'hi ansiItalicMagenta     ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=italic       gui=italic'
+   execute 'hi ansiItalicCyan        ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=italic       gui=italic'
+   execute 'hi ansiItalicWhite       ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=italic       gui=italic'
+   execute 'hi ansiItalicGray        ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=italic       gui=italic'
 
-   hi ansiUnderline                                                                               cterm=underline    gui=underline
-   hi ansiUnderlineBlack    ctermfg=Black      guifg=Black                                        cterm=underline    gui=underline
-   hi ansiUnderlineRed      ctermfg=DarkRed        guifg=DarkRed                                          cterm=underline    gui=underline
-   hi ansiUnderlineGreen    ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=underline    gui=underline
-   hi ansiUnderlineYellow   ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=underline    gui=underline
-   hi ansiUnderlineBlue     ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=underline    gui=underline
-   hi ansiUnderlineMagenta  ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=underline    gui=underline
-   hi ansiUnderlineCyan     ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=underline    gui=underline
-   hi ansiUnderlineWhite    ctermfg=LightGray      guifg=LightGray                                        cterm=underline    gui=underline
-   hi ansiUnderlineGray     ctermfg=DarkGray       guifg=DarkGray                                         cterm=underline    gui=underline
+   execute 'hi ansiUnderline                                                                               cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineBlack    ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineRed      ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineGreen    ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineYellow   ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineBlue     ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineMagenta  ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineCyan     ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineWhite    ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineGray     ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=underline    gui=underline'
 
-   hi ansiBlackUnderline    ctermbg=Black      guibg=Black                                        cterm=underline    gui=underline
-   hi ansiRedUnderline      ctermbg=DarkRed        guibg=DarkRed                                          cterm=underline    gui=underline
-   hi ansiGreenUnderline    ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=underline    gui=underline
-   hi ansiYellowUnderline   ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=underline    gui=underline
-   hi ansiBlueUnderline     ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=underline    gui=underline
-   hi ansiMagentaUnderline  ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=underline    gui=underline
-   hi ansiCyanUnderline     ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=underline    gui=underline
-   hi ansiWhiteUnderline    ctermbg=LightGray      guibg=LightGray                                        cterm=underline    gui=underline
+   execute 'hi ansiBlackUnderline    ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiRedUnderline      ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=underline    gui=underline'
+   execute 'hi ansiGreenUnderline    ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiYellowUnderline   ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=underline    gui=underline'
+   execute 'hi ansiBlueUnderline     ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiMagentaUnderline  ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=underline    gui=underline'
+   execute 'hi ansiCyanUnderline     ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiWhiteUnderline    ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=underline    gui=underline'
 
-   hi ansiBlink                                                                                   cterm=standout     gui=undercurl
-   hi ansiBlinkBlack        ctermfg=Black      guifg=Black                                        cterm=standout     gui=undercurl
-   hi ansiBlinkRed          ctermfg=DarkRed        guifg=DarkRed                                          cterm=standout     gui=undercurl
-   hi ansiBlinkGreen        ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=standout     gui=undercurl
-   hi ansiBlinkYellow       ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=standout     gui=undercurl
-   hi ansiBlinkBlue         ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=standout     gui=undercurl
-   hi ansiBlinkMagenta      ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=standout     gui=undercurl
-   hi ansiBlinkCyan         ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=standout     gui=undercurl
-   hi ansiBlinkWhite        ctermfg=LightGray      guifg=LightGray                                        cterm=standout     gui=undercurl
-   hi ansiBlinkGray         ctermfg=DarkGray       guifg=DarkGray                                         cterm=standout     gui=undercurl
+   execute 'hi ansiBlink                                                                                   cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkBlack        ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkRed          ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkGreen        ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkYellow       ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkBlue         ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkMagenta      ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkCyan         ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkWhite        ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkGray         ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=standout     gui=undercurl'
 
-   hi ansiRapidBlink                                                                              cterm=standout     gui=undercurl
-   hi ansiRapidBlinkBlack   ctermfg=Black      guifg=Black                                        cterm=standout     gui=undercurl
-   hi ansiRapidBlinkRed     ctermfg=DarkRed        guifg=DarkRed                                          cterm=standout     gui=undercurl
-   hi ansiRapidBlinkGreen   ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=standout     gui=undercurl
-   hi ansiRapidBlinkYellow  ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=standout     gui=undercurl
-   hi ansiRapidBlinkBlue    ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=standout     gui=undercurl
-   hi ansiRapidBlinkMagenta ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=standout     gui=undercurl
-   hi ansiRapidBlinkCyan    ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=standout     gui=undercurl
-   hi ansiRapidBlinkWhite   ctermfg=LightGray      guifg=LightGray                                        cterm=standout     gui=undercurl
-   hi ansiRapidBlinkGray    ctermfg=DarkGray       guifg=DarkGray                                         cterm=standout     gui=undercurl
+   execute 'hi ansiRapidBlink                                                                              cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkBlack   ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkRed     ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkGreen   ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkYellow  ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkBlue    ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkMagenta ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkCyan    ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkWhite   ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkGray    ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=standout     gui=undercurl'
 
-   hi ansiRV                                                                                      cterm=reverse      gui=reverse
-   hi ansiRVBlack           ctermfg=Black      guifg=Black                                        cterm=reverse      gui=reverse
-   hi ansiRVRed             ctermfg=DarkRed        guifg=DarkRed                                          cterm=reverse      gui=reverse
-   hi ansiRVGreen           ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=reverse      gui=reverse
-   hi ansiRVYellow          ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=reverse      gui=reverse
-   hi ansiRVBlue            ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=reverse      gui=reverse
-   hi ansiRVMagenta         ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=reverse      gui=reverse
-   hi ansiRVCyan            ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=reverse      gui=reverse
-   hi ansiRVWhite           ctermfg=LightGray      guifg=LightGray                                        cterm=reverse      gui=reverse
-   hi ansiRVGray            ctermfg=DarkGray       guifg=DarkGray                                         cterm=reverse      gui=reverse
+   execute 'hi ansiRV                                                                                      cterm=reverse      gui=reverse'
+   execute 'hi ansiRVBlack           ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=reverse      gui=reverse'
+   execute 'hi ansiRVRed             ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=reverse      gui=reverse'
+   execute 'hi ansiRVGreen           ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=reverse      gui=reverse'
+   execute 'hi ansiRVYellow          ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=reverse      gui=reverse'
+   execute 'hi ansiRVBlue            ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=reverse      gui=reverse'
+   execute 'hi ansiRVMagenta         ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=reverse      gui=reverse'
+   execute 'hi ansiRVCyan            ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=reverse      gui=reverse'
+   execute 'hi ansiRVWhite           ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=reverse      gui=reverse'
+   execute 'hi ansiRVGray            ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=reverse      gui=reverse'
 
-   hi ansiBoldDefault         ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=bold         gui=bold
-   hi ansiUnderlineDefault    ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=underline    gui=underline
-   hi ansiBlackDefault        ctermfg=Black          ctermbg=NONE      guifg=Black          guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiRedDefault          ctermfg=DarkRed        ctermbg=NONE      guifg=DarkRed        guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiGreenDefault        ctermfg=DarkGreen      ctermbg=NONE      guifg=DarkGreen      guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiYellowDefault       ctermfg=DarkYellow     ctermbg=NONE      guifg=DarkYellow     guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiBlueDefault         ctermfg=DarkBlue       ctermbg=NONE      guifg=DarkBlue       guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiMagentaDefault      ctermfg=DarkMagenta    ctermbg=NONE      guifg=DarkMagenta    guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiCyanDefault         ctermfg=DarkCyan       ctermbg=NONE      guifg=DarkCyan       guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiWhiteDefault        ctermfg=LightGray      ctermbg=NONE      guifg=LightGray      guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiGrayDefault         ctermfg=DarkGray      ctermbg=NONE      guifg=DarkGray      guibg=NONE    cterm=NONE         gui=NONE
+   execute 'hi ansiBoldDefault         ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=bold         gui=bold'
+   execute 'hi ansiUnderlineDefault    ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=underline    gui=underline'
+   execute 'hi ansiBlackDefault        ctermfg=0          ctermbg=NONE      guifg=' . g:ansi_Black . '          guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedDefault          ctermfg=1        ctermbg=NONE      guifg=' . g:ansi_DarkRed . '        guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenDefault        ctermfg=2      ctermbg=NONE      guifg=' . g:ansi_DarkGreen . '      guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowDefault       ctermfg=3     ctermbg=NONE      guifg=' . g:ansi_DarkYellow . '     guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueDefault         ctermfg=4       ctermbg=NONE      guifg=' . g:ansi_DarkBlue . '       guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaDefault      ctermfg=5    ctermbg=NONE      guifg=' . g:ansi_DarkMagenta . '    guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanDefault         ctermfg=6       ctermbg=NONE      guifg=' . g:ansi_DarkCyan . '       guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteDefault        ctermfg=15      ctermbg=NONE      guifg=' . g:ansi_LightGray . '      guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayDefault         ctermfg=7      ctermbg=NONE      guifg=' . g:ansi_DarkGray . '      guibg=NONE    cterm=NONE         gui=NONE'
 
-   hi ansiDefaultDefault      ctermfg=NONE      ctermbg=NONE       guifg=NONE       guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiDefaultBlack        ctermfg=NONE      ctermbg=Black      guifg=NONE       guibg=Black   cterm=NONE         gui=NONE
-   hi ansiDefaultRed          ctermfg=NONE        ctermbg=DarkRed      guifg=NONE        guibg=DarkRed    cterm=NONE         gui=NONE
-   hi ansiDefaultGreen        ctermfg=NONE      ctermbg=DarkGreen      guifg=NONE      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiDefaultYellow       ctermfg=NONE     ctermbg=DarkYellow      guifg=NONE     guibg=DarkYellow    cterm=NONE         gui=NONE
-   hi ansiDefaultBlue         ctermfg=NONE       ctermbg=DarkBlue      guifg=NONE       guibg=DarkBlue    cterm=NONE         gui=NONE
-   hi ansiDefaultMagenta      ctermfg=NONE    ctermbg=DarkMagenta      guifg=NONE    guibg=DarkMagenta    cterm=NONE         gui=NONE
-   hi ansiDefaultCyan         ctermfg=NONE       ctermbg=DarkCyan      guifg=NONE       guibg=DarkCyan    cterm=NONE         gui=NONE
-   hi ansiDefaultWhite        ctermfg=NONE      ctermbg=LightGray      guifg=NONE      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiDefaultGray         ctermfg=NONE      ctermbg=DarkGray      guifg=NONE      guibg=DarkGray    cterm=NONE         gui=NONE
+   execute 'hi ansiDefaultDefault      ctermfg=NONE      ctermbg=NONE       guifg=NONE       guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultBlack        ctermfg=NONE      ctermbg=0      guifg=NONE       guibg=' . g:ansi_Black . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultRed          ctermfg=NONE        ctermbg=1      guifg=NONE        guibg=' . g:ansi_DarkRed . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultGreen        ctermfg=NONE      ctermbg=2      guifg=NONE      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultYellow       ctermfg=NONE     ctermbg=3      guifg=NONE     guibg=' . g:ansi_DarkYellow . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultBlue         ctermfg=NONE       ctermbg=4      guifg=NONE       guibg=' . g:ansi_DarkBlue . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultMagenta      ctermfg=NONE    ctermbg=5      guifg=NONE    guibg=' . g:ansi_DarkMagenta . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultCyan         ctermfg=NONE       ctermbg=6      guifg=NONE       guibg=' . g:ansi_DarkCyan . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultWhite        ctermfg=NONE      ctermbg=15      guifg=NONE      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultGray         ctermfg=NONE      ctermbg=7      guifg=NONE      guibg=' . g:ansi_DarkGray . '    cterm=NONE         gui=NONE'
 
-   hi ansiBlackBlack        ctermfg=Black      ctermbg=Black      guifg=Black      guibg=Black    cterm=NONE         gui=NONE
-   hi ansiRedBlack          ctermfg=DarkRed        ctermbg=Black      guifg=DarkRed        guibg=Black    cterm=NONE         gui=NONE
-   hi ansiGreenBlack        ctermfg=DarkGreen      ctermbg=Black      guifg=DarkGreen      guibg=Black    cterm=NONE         gui=NONE
-   hi ansiYellowBlack       ctermfg=DarkYellow     ctermbg=Black      guifg=DarkYellow     guibg=Black    cterm=NONE         gui=NONE
-   hi ansiBlueBlack         ctermfg=DarkBlue       ctermbg=Black      guifg=DarkBlue       guibg=Black    cterm=NONE         gui=NONE
-   hi ansiMagentaBlack      ctermfg=DarkMagenta    ctermbg=Black      guifg=DarkMagenta    guibg=Black    cterm=NONE         gui=NONE
-   hi ansiCyanBlack         ctermfg=DarkCyan       ctermbg=Black      guifg=DarkCyan       guibg=Black    cterm=NONE         gui=NONE
-   hi ansiWhiteBlack        ctermfg=LightGray      ctermbg=Black      guifg=LightGray      guibg=Black    cterm=NONE         gui=NONE
-   hi ansiGrayBlack         ctermfg=DarkGray       ctermbg=Black      guifg=DarkGray       guibg=Black    cterm=NONE         gui=NONE
+   execute 'hi ansiBlackBlack        ctermfg=0      ctermbg=0      guifg=' . g:ansi_Black . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedBlack          ctermfg=1        ctermbg=0      guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenBlack        ctermfg=2      ctermbg=0      guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowBlack       ctermfg=3     ctermbg=0      guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueBlack         ctermfg=4       ctermbg=0      guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaBlack      ctermfg=5    ctermbg=0      guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanBlack         ctermfg=6       ctermbg=0      guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteBlack        ctermfg=15      ctermbg=0      guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayBlack         ctermfg=7       ctermbg=0      guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
 
-   hi ansiBlackRed          ctermfg=Black      ctermbg=DarkRed        guifg=Black      guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiRedRed            ctermfg=DarkRed        ctermbg=DarkRed        guifg=DarkRed        guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiGreenRed          ctermfg=DarkGreen      ctermbg=DarkRed        guifg=DarkGreen      guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiYellowRed         ctermfg=DarkYellow     ctermbg=DarkRed        guifg=DarkYellow     guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiBlueRed           ctermfg=DarkBlue       ctermbg=DarkRed        guifg=DarkBlue       guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiMagentaRed        ctermfg=DarkMagenta    ctermbg=DarkRed        guifg=DarkMagenta    guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiCyanRed           ctermfg=DarkCyan       ctermbg=DarkRed        guifg=DarkCyan       guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiWhiteRed          ctermfg=LightGray      ctermbg=DarkRed        guifg=LightGray      guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiGrayRed           ctermfg=DarkGray       ctermbg=DarkRed        guifg=DarkGray       guibg=DarkRed      cterm=NONE         gui=NONE
+   execute 'hi ansiBlackRed          ctermfg=0      ctermbg=1        guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiRedRed            ctermfg=1        ctermbg=1        guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenRed          ctermfg=2      ctermbg=1        guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowRed         ctermfg=3     ctermbg=1        guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueRed           ctermfg=4       ctermbg=1        guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaRed        ctermfg=5    ctermbg=1        guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanRed           ctermfg=6       ctermbg=1        guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteRed          ctermfg=15      ctermbg=1        guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayRed           ctermfg=7       ctermbg=1        guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
 
-   hi ansiBlackGreen        ctermfg=Black      ctermbg=DarkGreen      guifg=Black      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiRedGreen          ctermfg=DarkRed        ctermbg=DarkGreen      guifg=DarkRed        guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiGreenGreen        ctermfg=DarkGreen      ctermbg=DarkGreen      guifg=DarkGreen      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiYellowGreen       ctermfg=DarkYellow     ctermbg=DarkGreen      guifg=DarkYellow     guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiBlueGreen         ctermfg=DarkBlue       ctermbg=DarkGreen      guifg=DarkBlue       guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiMagentaGreen      ctermfg=DarkMagenta    ctermbg=DarkGreen      guifg=DarkMagenta    guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiCyanGreen         ctermfg=DarkCyan       ctermbg=DarkGreen      guifg=DarkCyan       guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiWhiteGreen        ctermfg=LightGray      ctermbg=DarkGreen      guifg=LightGray      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiGrayGreen         ctermfg=DarkGray       ctermbg=DarkGreen      guifg=DarkGray       guibg=DarkGreen    cterm=NONE         gui=NONE
+   execute 'hi ansiBlackGreen        ctermfg=0      ctermbg=2      guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedGreen          ctermfg=1        ctermbg=2      guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenGreen        ctermfg=2      ctermbg=2      guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowGreen       ctermfg=3     ctermbg=2      guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueGreen         ctermfg=4       ctermbg=2      guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaGreen      ctermfg=5    ctermbg=2      guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanGreen         ctermfg=6       ctermbg=2      guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteGreen        ctermfg=15      ctermbg=2      guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayGreen         ctermfg=7       ctermbg=2      guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
 
-   hi ansiBlackYellow       ctermfg=Black      ctermbg=DarkYellow     guifg=Black      guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiRedYellow         ctermfg=DarkRed        ctermbg=DarkYellow     guifg=DarkRed        guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiGreenYellow       ctermfg=DarkGreen      ctermbg=DarkYellow     guifg=DarkGreen      guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiYellowYellow      ctermfg=DarkYellow     ctermbg=DarkYellow     guifg=DarkYellow     guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiBlueYellow        ctermfg=DarkBlue       ctermbg=DarkYellow     guifg=DarkBlue       guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiMagentaYellow     ctermfg=DarkMagenta    ctermbg=DarkYellow     guifg=DarkMagenta    guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiCyanYellow        ctermfg=DarkCyan       ctermbg=DarkYellow     guifg=DarkCyan       guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiWhiteYellow       ctermfg=LightGray      ctermbg=DarkYellow     guifg=LightGray      guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiGrayYellow        ctermfg=DarkGray       ctermbg=DarkYellow     guifg=DarkGray       guibg=DarkYellow   cterm=NONE         gui=NONE
+   execute 'hi ansiBlackYellow       ctermfg=0      ctermbg=3     guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiRedYellow         ctermfg=1        ctermbg=3     guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenYellow       ctermfg=2      ctermbg=3     guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowYellow      ctermfg=3     ctermbg=3     guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueYellow        ctermfg=4       ctermbg=3     guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaYellow     ctermfg=5    ctermbg=3     guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanYellow        ctermfg=6       ctermbg=3     guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteYellow       ctermfg=15      ctermbg=3     guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayYellow        ctermfg=7       ctermbg=3     guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
 
-   hi ansiBlackBlue         ctermfg=Black      ctermbg=DarkBlue       guifg=Black      guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiRedBlue           ctermfg=DarkRed        ctermbg=DarkBlue       guifg=DarkRed        guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiGreenBlue         ctermfg=DarkGreen      ctermbg=DarkBlue       guifg=DarkGreen      guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiYellowBlue        ctermfg=DarkYellow     ctermbg=DarkBlue       guifg=DarkYellow     guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiBlueBlue          ctermfg=DarkBlue       ctermbg=DarkBlue       guifg=DarkBlue       guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiMagentaBlue       ctermfg=DarkMagenta    ctermbg=DarkBlue       guifg=DarkMagenta    guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiCyanBlue          ctermfg=DarkCyan       ctermbg=DarkBlue       guifg=DarkCyan       guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiWhiteBlue         ctermfg=LightGray      ctermbg=DarkBlue       guifg=LightGray      guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiGrayBlue          ctermfg=DarkGray       ctermbg=DarkBlue       guifg=DarkGray       guibg=DarkBlue     cterm=NONE         gui=NONE
+   execute 'hi ansiBlackBlue         ctermfg=0      ctermbg=4       guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiRedBlue           ctermfg=1        ctermbg=4       guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenBlue         ctermfg=2      ctermbg=4       guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowBlue        ctermfg=3     ctermbg=4       guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueBlue          ctermfg=4       ctermbg=4       guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaBlue       ctermfg=5    ctermbg=4       guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanBlue          ctermfg=6       ctermbg=4       guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteBlue         ctermfg=15      ctermbg=4       guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayBlue          ctermfg=7       ctermbg=4       guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
 
-   hi ansiBlackMagenta      ctermfg=Black      ctermbg=DarkMagenta    guifg=Black      guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiRedMagenta        ctermfg=DarkRed        ctermbg=DarkMagenta    guifg=DarkRed        guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiGreenMagenta      ctermfg=DarkGreen      ctermbg=DarkMagenta    guifg=DarkGreen      guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiYellowMagenta     ctermfg=DarkYellow     ctermbg=DarkMagenta    guifg=DarkYellow     guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiBlueMagenta       ctermfg=DarkBlue       ctermbg=DarkMagenta    guifg=DarkBlue       guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiMagentaMagenta    ctermfg=DarkMagenta    ctermbg=DarkMagenta    guifg=DarkMagenta    guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiCyanMagenta       ctermfg=DarkCyan       ctermbg=DarkMagenta    guifg=DarkCyan       guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiWhiteMagenta      ctermfg=LightGray      ctermbg=DarkMagenta    guifg=LightGray      guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiGrayMagenta       ctermfg=DarkGray       ctermbg=DarkMagenta    guifg=DarkGray       guibg=DarkMagenta  cterm=NONE         gui=NONE
+   execute 'hi ansiBlackMagenta      ctermfg=0      ctermbg=5    guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiRedMagenta        ctermfg=1        ctermbg=5    guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenMagenta      ctermfg=2      ctermbg=5    guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowMagenta     ctermfg=3     ctermbg=5    guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueMagenta       ctermfg=4       ctermbg=5    guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaMagenta    ctermfg=5    ctermbg=5    guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanMagenta       ctermfg=6       ctermbg=5    guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteMagenta      ctermfg=15      ctermbg=5    guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayMagenta       ctermfg=7       ctermbg=5    guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
 
-   hi ansiBlackCyan         ctermfg=Black      ctermbg=DarkCyan       guifg=Black      guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiRedCyan           ctermfg=DarkRed        ctermbg=DarkCyan       guifg=DarkRed        guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiGreenCyan         ctermfg=DarkGreen      ctermbg=DarkCyan       guifg=DarkGreen      guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiYellowCyan        ctermfg=DarkYellow     ctermbg=DarkCyan       guifg=DarkYellow     guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiBlueCyan          ctermfg=DarkBlue       ctermbg=DarkCyan       guifg=DarkBlue       guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiMagentaCyan       ctermfg=DarkMagenta    ctermbg=DarkCyan       guifg=DarkMagenta    guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiCyanCyan          ctermfg=DarkCyan       ctermbg=DarkCyan       guifg=DarkCyan       guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiWhiteCyan         ctermfg=LightGray      ctermbg=DarkCyan       guifg=LightGray      guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiGrayCyan          ctermfg=DarkGray       ctermbg=DarkCyan       guifg=DarkGray       guibg=DarkCyan     cterm=NONE         gui=NONE
+   execute 'hi ansiBlackCyan         ctermfg=0      ctermbg=6       guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiRedCyan           ctermfg=1        ctermbg=6       guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenCyan         ctermfg=2      ctermbg=6       guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowCyan        ctermfg=3     ctermbg=6       guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueCyan          ctermfg=4       ctermbg=6       guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaCyan       ctermfg=5    ctermbg=6       guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanCyan          ctermfg=6       ctermbg=6       guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteCyan         ctermfg=15      ctermbg=6       guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayCyan          ctermfg=7       ctermbg=6       guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
 
-   hi ansiBlackWhite        ctermfg=Black      ctermbg=LightGray      guifg=Black      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiRedWhite          ctermfg=DarkRed        ctermbg=LightGray      guifg=DarkRed        guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiGreenWhite        ctermfg=DarkGreen      ctermbg=LightGray      guifg=DarkGreen      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiYellowWhite       ctermfg=DarkYellow     ctermbg=LightGray      guifg=DarkYellow     guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiBlueWhite         ctermfg=DarkBlue       ctermbg=LightGray      guifg=DarkBlue       guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiMagentaWhite      ctermfg=DarkMagenta    ctermbg=LightGray      guifg=DarkMagenta    guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiCyanWhite         ctermfg=DarkCyan       ctermbg=LightGray      guifg=DarkCyan       guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiWhiteWhite        ctermfg=LightGray      ctermbg=LightGray      guifg=LightGray      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiGrayWhite         ctermfg=DarkGray       ctermbg=LightGray      guifg=DarkGray       guibg=LightGray    cterm=NONE         gui=NONE
+   execute 'hi ansiBlackWhite        ctermfg=0      ctermbg=15      guifg=' . g:ansi_Black . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedWhite          ctermfg=1        ctermbg=15      guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenWhite        ctermfg=2      ctermbg=15      guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowWhite       ctermfg=3     ctermbg=15      guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueWhite         ctermfg=4       ctermbg=15      guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaWhite      ctermfg=5    ctermbg=15      guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanWhite         ctermfg=6       ctermbg=15      guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteWhite        ctermfg=15      ctermbg=15      guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayWhite         ctermfg=7       ctermbg=15      guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
 
-   hi ansiBlackGray         ctermfg=Black      ctermbg=DarkGray       guifg=Black      guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiRedGray           ctermfg=DarkRed        ctermbg=DarkGray       guifg=DarkRed        guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiGreenGray         ctermfg=DarkGreen      ctermbg=DarkGray       guifg=DarkGreen      guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiYellowGray        ctermfg=DarkYellow     ctermbg=DarkGray       guifg=DarkYellow     guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiBlueGray          ctermfg=DarkBlue       ctermbg=DarkGray       guifg=DarkBlue       guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiMagentaGray       ctermfg=DarkMagenta    ctermbg=DarkGray       guifg=DarkMagenta    guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiCyanGray          ctermfg=DarkCyan       ctermbg=DarkGray       guifg=DarkCyan       guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiWhiteGray         ctermfg=LightGray      ctermbg=DarkGray       guifg=LightGray      guibg=DarkGray     cterm=NONE         gui=NONE
-   hi ansiGrayGray          ctermfg=DarkGray       ctermbg=DarkGray       guifg=DarkGray       guibg=DarkGray     cterm=NONE         gui=NONE
+   execute 'hi ansiBlackGray         ctermfg=0      ctermbg=7       guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiRedGray           ctermfg=1        ctermbg=7       guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenGray         ctermfg=2      ctermbg=7       guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowGray        ctermfg=3     ctermbg=7       guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueGray          ctermfg=4       ctermbg=7       guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaGray       ctermfg=5    ctermbg=7       guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanGray          ctermfg=6       ctermbg=7       guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteGray         ctermfg=15      ctermbg=7       guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayGray          ctermfg=7       ctermbg=7       guifg=' . g:ansi_DarkGray . '       guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
 
    if v:version >= 700 && exists("+t_Co") && &t_Co == 256 && exists("g:ansiesc_256color")
     " ---------------------------
@@ -1816,262 +1816,262 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    " not 8 or 256 color terminals (gui): {{{3
    " ----------------------------------
 "   call Decho("set up gui highlighting groups")
-   hi ansiBlack             ctermfg=Black      guifg=Black                                        cterm=NONE         gui=NONE
-   hi ansiRed               ctermfg=DarkRed        guifg=DarkRed                                          cterm=NONE         gui=NONE
-   hi ansiGreen             ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=NONE         gui=NONE
-   hi ansiYellow            ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=NONE         gui=NONE
-   hi ansiBlue              ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=NONE         gui=NONE
-   hi ansiMagenta           ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=NONE         gui=NONE
-   hi ansiCyan              ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=NONE         gui=NONE
-   hi ansiWhite             ctermfg=LightGray      guifg=LightGray                                        cterm=NONE         gui=NONE
-   hi ansiGray              ctermfg=DarkGray       guifg=DarkGray                                         cterm=NONE         gui=NONE
+   execute 'hi ansiBlack             ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiRed               ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=NONE         gui=NONE'
+   execute 'hi ansiGreen             ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiYellow            ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=NONE         gui=NONE'
+   execute 'hi ansiBlue              ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiMagenta           ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyan              ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiWhite             ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiGray              ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=NONE         gui=NONE'
 
-   hi ansiBlackFg           ctermfg=Black      guifg=Black                                        cterm=NONE         gui=NONE
-   hi ansiRedFg             ctermfg=DarkRed        guifg=DarkRed                                          cterm=NONE         gui=NONE
-   hi ansiGreenFg           ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=NONE         gui=NONE
-   hi ansiYellowFg          ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=NONE         gui=NONE
-   hi ansiBlueFg            ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=NONE         gui=NONE
-   hi ansiMagentaFg         ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=NONE         gui=NONE
-   hi ansiCyanFg            ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=NONE         gui=NONE
-   hi ansiWhiteFg           ctermfg=LightGray      guifg=LightGray                                        cterm=NONE         gui=NONE
-   hi ansiGrayFg            ctermfg=DarkGray       guifg=DarkGray                                         cterm=NONE         gui=NONE
+   execute 'hi ansiBlackFg           ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiRedFg             ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenFg           ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowFg          ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueFg            ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaFg         ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanFg            ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteFg           ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayFg            ctermfg=7       guifg=' . g:ansi_DarkGray . '                                         cterm=NONE         gui=NONE'
 
-   hi ansiDefaultBg         ctermbg=NONE       guibg=NONE                                         cterm=NONE         gui=NONE
-   hi ansiBlackBg           ctermbg=Black      guibg=Black                                        cterm=NONE         gui=NONE
-   hi ansiRedBg             ctermbg=DarkRed        guibg=DarkRed                                          cterm=NONE         gui=NONE
-   hi ansiGreenBg           ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=NONE         gui=NONE
-   hi ansiYellowBg          ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=NONE         gui=NONE
-   hi ansiBlueBg            ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=NONE         gui=NONE
-   hi ansiMagentaBg         ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=NONE         gui=NONE
-   hi ansiCyanBg            ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=NONE         gui=NONE
-   hi ansiWhiteBg           ctermbg=LightGray      guibg=LightGray                                        cterm=NONE         gui=NONE
-   hi ansiGrayBg            ctermbg=DarkGray       guibg=DarkGray                                         cterm=NONE         gui=NONE
+   execute 'hi ansiDefaultBg         ctermbg=NONE       guibg=NONE                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiBlackBg           ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiRedBg             ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenBg           ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowBg          ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueBg            ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaBg         ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanBg            ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteBg           ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayBg            ctermbg=7       guibg=' . g:ansi_DarkGray . '                                         cterm=NONE         gui=NONE'
 
-   hi ansiDefaultReverseBg         ctermbg=NONE       guibg=NONE                                         cterm=reverse         gui=reverse
-   hi ansiBlackReverseBg           ctermbg=Black      guibg=Black                                        cterm=reverse         gui=reverse
-   hi ansiRedReverseBg             ctermbg=DarkRed        guibg=DarkRed                                          cterm=reverse         gui=reverse
-   hi ansiGreenReverseBg           ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=reverse         gui=reverse
-   hi ansiYellowReverseBg          ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=reverse         gui=reverse
-   hi ansiBlueReverseBg            ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=reverse         gui=reverse
-   hi ansiMagentaReverseBg         ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=reverse         gui=reverse
-   hi ansiCyanReverseBg            ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=reverse         gui=reverse
-   hi ansiWhiteReverseBg           ctermbg=LightGray      guibg=LightGray                                        cterm=reverse         gui=reverse
-   hi ansiGrayReverseBg            ctermbg=DarkGray      guibg=DarkGray                                        cterm=reverse         gui=reverse
+   execute 'hi ansiDefaultReverseBg         ctermbg=NONE       guibg=NONE                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiBlackReverseBg           ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiRedReverseBg             ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=reverse         gui=reverse'
+   execute 'hi ansiGreenReverseBg           ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiYellowReverseBg          ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=reverse         gui=reverse'
+   execute 'hi ansiBlueReverseBg            ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiMagentaReverseBg         ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=reverse         gui=reverse'
+   execute 'hi ansiCyanReverseBg            ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiWhiteReverseBg           ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiGrayReverseBg            ctermbg=7      guibg=' . g:ansi_DarkGray . '                                        cterm=reverse         gui=reverse'
 
-   hi ansiBold                                                                                    cterm=bold         gui=bold
-   hi ansiBoldUnderline                                                                           cterm=bold,underline gui=bold,underline
-   hi ansiBoldBlack         ctermfg=Black      guifg=Black                                        cterm=bold         gui=bold
-   hi ansiBoldRed           ctermfg=DarkRed        guifg=DarkRed                                          cterm=bold         gui=bold
-   hi ansiBoldGreen         ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=bold         gui=bold
-   hi ansiBoldYellow        ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=bold         gui=bold
-   hi ansiBoldBlue          ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=bold         gui=bold
-   hi ansiBoldMagenta       ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=bold         gui=bold
-   hi ansiBoldCyan          ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=bold         gui=bold
-   hi ansiBoldWhite         ctermfg=LightGray      guifg=LightGray                                        cterm=bold         gui=bold
-   hi ansiBoldGray          ctermfg=DarkGray      guifg=DarkGray                                        cterm=bold         gui=bold
+   execute 'hi ansiBold                                                                                    cterm=bold         gui=bold'
+   execute 'hi ansiBoldUnderline                                                                           cterm=bold,underline gui=bold,underline'
+   execute 'hi ansiBoldBlack         ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiBoldRed           ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=bold         gui=bold'
+   execute 'hi ansiBoldGreen         ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiBoldYellow        ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=bold         gui=bold'
+   execute 'hi ansiBoldBlue          ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiBoldMagenta       ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=bold         gui=bold'
+   execute 'hi ansiBoldCyan          ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiBoldWhite         ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiBoldGray          ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=bold         gui=bold'
 
-   hi ansiBlackBold         ctermbg=Black      guibg=Black                                        cterm=bold         gui=bold
-   hi ansiRedBold           ctermbg=DarkRed        guibg=DarkRed                                          cterm=bold         gui=bold
-   hi ansiGreenBold         ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=bold         gui=bold
-   hi ansiYellowBold        ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=bold         gui=bold
-   hi ansiBlueBold          ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=bold         gui=bold
-   hi ansiMagentaBold       ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=bold         gui=bold
-   hi ansiCyanBold          ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=bold         gui=bold
-   hi ansiWhiteBold         ctermbg=LightGray      guibg=LightGray                                        cterm=bold         gui=bold
-   hi ansiGrayBold          ctermbg=DarkGray      guibg=DarkGray                                        cterm=bold         gui=bold
+   execute 'hi ansiBlackBold         ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiRedBold           ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=bold         gui=bold'
+   execute 'hi ansiGreenBold         ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiYellowBold        ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=bold         gui=bold'
+   execute 'hi ansiBlueBold          ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiMagentaBold       ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=bold         gui=bold'
+   execute 'hi ansiCyanBold          ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=bold         gui=bold'
+   execute 'hi ansiWhiteBold         ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=bold         gui=bold'
+   execute 'hi ansiGrayBold          ctermbg=7      guibg=' . g:ansi_DarkGray . '                                        cterm=bold         gui=bold'
 
-   hi ansiReverse                                                                                 cterm=reverse      gui=reverse
-   hi ansiReverseUnderline                                                                        cterm=reverse,underline gui=reverse,underline
-   hi ansiReverseBold                                                                             cterm=reverse,bold gui=reverse,bold
-   hi ansiReverseBoldUnderline                                                                    cterm=reverse,bold,underline gui=reverse,bold,underline
-   hi ansiReverseBlack      ctermfg=Black      guifg=Black                                        cterm=reverse         gui=reverse
-   hi ansiReverseRed        ctermfg=DarkRed        guifg=DarkRed                                          cterm=reverse         gui=reverse
-   hi ansiReverseGreen      ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=reverse         gui=reverse
-   hi ansiReverseYellow     ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=reverse         gui=reverse
-   hi ansiReverseBlue       ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=reverse         gui=reverse
-   hi ansiReverseMagenta    ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=reverse         gui=reverse
-   hi ansiReverseCyan       ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=reverse         gui=reverse
-   hi ansiReverseWhite      ctermfg=LightGray      guifg=LightGray                                        cterm=reverse         gui=reverse
-   hi ansiReverseGray       ctermfg=DarkGray      guifg=DarkGray                                        cterm=reverse         gui=reverse
+   execute 'hi ansiReverse                                                                                 cterm=reverse      gui=reverse'
+   execute 'hi ansiReverseUnderline                                                                        cterm=reverse,underline gui=reverse,underline'
+   execute 'hi ansiReverseBold                                                                             cterm=reverse,bold gui=reverse,bold'
+   execute 'hi ansiReverseBoldUnderline                                                                    cterm=reverse,bold,underline gui=reverse,bold,underline'
+   execute 'hi ansiReverseBlack      ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseRed        ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseGreen      ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseYellow     ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseBlue       ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseMagenta    ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseCyan       ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseWhite      ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=reverse         gui=reverse'
+   execute 'hi ansiReverseGray       ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=reverse         gui=reverse'
 
-   hi ansiStandout                                                                                cterm=standout     gui=standout
-   hi ansiStandoutBlack     ctermfg=Black      guifg=Black                                        cterm=standout     gui=standout
-   hi ansiStandoutRed       ctermfg=DarkRed        guifg=DarkRed                                          cterm=standout     gui=standout
-   hi ansiStandoutGreen     ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=standout     gui=standout
-   hi ansiStandoutYellow    ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=standout     gui=standout
-   hi ansiStandoutBlue      ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=standout     gui=standout
-   hi ansiStandoutMagenta   ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=standout     gui=standout
-   hi ansiStandoutCyan      ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=standout     gui=standout
-   hi ansiStandoutWhite     ctermfg=LightGray      guifg=LightGray                                        cterm=standout     gui=standout
-   hi ansiStandoutGray      ctermfg=DarkGray      guifg=DarkGray                                        cterm=standout     gui=standout
+   execute 'hi ansiStandout                                                                                cterm=standout     gui=standout'
+   execute 'hi ansiStandoutBlack     ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=standout     gui=standout'
+   execute 'hi ansiStandoutRed       ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=standout     gui=standout'
+   execute 'hi ansiStandoutGreen     ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=standout     gui=standout'
+   execute 'hi ansiStandoutYellow    ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=standout     gui=standout'
+   execute 'hi ansiStandoutBlue      ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=standout     gui=standout'
+   execute 'hi ansiStandoutMagenta   ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=standout     gui=standout'
+   execute 'hi ansiStandoutCyan      ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=standout     gui=standout'
+   execute 'hi ansiStandoutWhite     ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=standout     gui=standout'
+   execute 'hi ansiStandoutGray      ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=standout     gui=standout'
 
-   hi ansiItalic                                                                                  cterm=italic       gui=italic
-   hi ansiItalicBlack       ctermfg=Black      guifg=Black                                        cterm=italic       gui=italic
-   hi ansiItalicRed         ctermfg=DarkRed        guifg=DarkRed                                          cterm=italic       gui=italic
-   hi ansiItalicGreen       ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=italic       gui=italic
-   hi ansiItalicYellow      ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=italic       gui=italic
-   hi ansiItalicBlue        ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=italic       gui=italic
-   hi ansiItalicMagenta     ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=italic       gui=italic
-   hi ansiItalicCyan        ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=italic       gui=italic
-   hi ansiItalicWhite       ctermfg=LightGray      guifg=LightGray                                        cterm=italic       gui=italic
-   hi ansiItalicGray        ctermfg=DarkGray      guifg=DarkGray                                        cterm=italic       gui=italic
+   execute 'hi ansiItalic                                                                                  cterm=italic       gui=italic'
+   execute 'hi ansiItalicBlack       ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=italic       gui=italic'
+   execute 'hi ansiItalicRed         ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=italic       gui=italic'
+   execute 'hi ansiItalicGreen       ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=italic       gui=italic'
+   execute 'hi ansiItalicYellow      ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=italic       gui=italic'
+   execute 'hi ansiItalicBlue        ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=italic       gui=italic'
+   execute 'hi ansiItalicMagenta     ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=italic       gui=italic'
+   execute 'hi ansiItalicCyan        ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=italic       gui=italic'
+   execute 'hi ansiItalicWhite       ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=italic       gui=italic'
+   execute 'hi ansiItalicGray        ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=italic       gui=italic'
 
-   hi ansiUnderline                                                                               cterm=underline    gui=underline
-   hi ansiUnderlineBlack    ctermfg=Black      guifg=Black                                        cterm=underline    gui=underline
-   hi ansiUnderlineRed      ctermfg=DarkRed        guifg=DarkRed                                          cterm=underline    gui=underline
-   hi ansiUnderlineGreen    ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=underline    gui=underline
-   hi ansiUnderlineYellow   ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=underline    gui=underline
-   hi ansiUnderlineBlue     ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=underline    gui=underline
-   hi ansiUnderlineMagenta  ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=underline    gui=underline
-   hi ansiUnderlineCyan     ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=underline    gui=underline
-   hi ansiUnderlineWhite    ctermfg=LightGray      guifg=LightGray                                        cterm=underline    gui=underline
-   hi ansiUnderlineGray     ctermfg=DarkGray      guifg=DarkGray                                        cterm=underline    gui=underline
+   execute 'hi ansiUnderline                                                                               cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineBlack    ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineRed      ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineGreen    ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineYellow   ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineBlue     ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineMagenta  ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineCyan     ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineWhite    ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiUnderlineGray     ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=underline    gui=underline'
 
-   hi ansiBlackUnderline    ctermbg=Black      guibg=Black                                        cterm=underline    gui=underline
-   hi ansiRedUnderline      ctermbg=DarkRed        guibg=DarkRed                                          cterm=underline    gui=underline
-   hi ansiGreenUnderline    ctermbg=DarkGreen      guibg=DarkGreen                                        cterm=underline    gui=underline
-   hi ansiYellowUnderline   ctermbg=DarkYellow     guibg=DarkYellow                                       cterm=underline    gui=underline
-   hi ansiBlueUnderline     ctermbg=DarkBlue       guibg=DarkBlue                                         cterm=underline    gui=underline
-   hi ansiMagentaUnderline  ctermbg=DarkMagenta    guibg=DarkMagenta                                      cterm=underline    gui=underline
-   hi ansiCyanUnderline     ctermbg=DarkCyan       guibg=DarkCyan                                         cterm=underline    gui=underline
-   hi ansiWhiteUnderline    ctermbg=LightGray      guibg=LightGray                                        cterm=underline    gui=underline
-   hi ansiGrayUnderline     ctermbg=DarkGray      guibg=DarkGray                                        cterm=underline    gui=underline
+   execute 'hi ansiBlackUnderline    ctermbg=0      guibg=' . g:ansi_Black . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiRedUnderline      ctermbg=1        guibg=' . g:ansi_DarkRed . '                                          cterm=underline    gui=underline'
+   execute 'hi ansiGreenUnderline    ctermbg=2      guibg=' . g:ansi_DarkGreen . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiYellowUnderline   ctermbg=3     guibg=' . g:ansi_DarkYellow . '                                       cterm=underline    gui=underline'
+   execute 'hi ansiBlueUnderline     ctermbg=4       guibg=' . g:ansi_DarkBlue . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiMagentaUnderline  ctermbg=5    guibg=' . g:ansi_DarkMagenta . '                                      cterm=underline    gui=underline'
+   execute 'hi ansiCyanUnderline     ctermbg=6       guibg=' . g:ansi_DarkCyan . '                                         cterm=underline    gui=underline'
+   execute 'hi ansiWhiteUnderline    ctermbg=15      guibg=' . g:ansi_LightGray . '                                        cterm=underline    gui=underline'
+   execute 'hi ansiGrayUnderline     ctermbg=7      guibg=' . g:ansi_DarkGray . '                                        cterm=underline    gui=underline'
 
-   hi ansiBlink                                                                                   cterm=standout     gui=undercurl
-   hi ansiBlinkBlack        ctermfg=Black      guifg=Black                                        cterm=standout     gui=undercurl
-   hi ansiBlinkRed          ctermfg=DarkRed        guifg=DarkRed                                          cterm=standout     gui=undercurl
-   hi ansiBlinkGreen        ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=standout     gui=undercurl
-   hi ansiBlinkYellow       ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=standout     gui=undercurl
-   hi ansiBlinkBlue         ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=standout     gui=undercurl
-   hi ansiBlinkMagenta      ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=standout     gui=undercurl
-   hi ansiBlinkCyan         ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=standout     gui=undercurl
-   hi ansiBlinkWhite        ctermfg=LightGray      guifg=LightGray                                        cterm=standout     gui=undercurl
-   hi ansiBlinkGray         ctermfg=DarkGray      guifg=DarkGray                                        cterm=standout     gui=undercurl
+   execute 'hi ansiBlink                                                                                   cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkBlack        ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkRed          ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkGreen        ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkYellow       ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkBlue         ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkMagenta      ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkCyan         ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkWhite        ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiBlinkGray         ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=standout     gui=undercurl'
 
-   hi ansiRapidBlink                                                                              cterm=standout     gui=undercurl
-   hi ansiRapidBlinkBlack   ctermfg=Black      guifg=Black                                        cterm=standout     gui=undercurl
-   hi ansiRapidBlinkRed     ctermfg=DarkRed        guifg=DarkRed                                          cterm=standout     gui=undercurl
-   hi ansiRapidBlinkGreen   ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=standout     gui=undercurl
-   hi ansiRapidBlinkYellow  ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=standout     gui=undercurl
-   hi ansiRapidBlinkBlue    ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=standout     gui=undercurl
-   hi ansiRapidBlinkMagenta ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=standout     gui=undercurl
-   hi ansiRapidBlinkCyan    ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=standout     gui=undercurl
-   hi ansiRapidBlinkWhite   ctermfg=LightGray      guifg=LightGray                                        cterm=standout     gui=undercurl
-   hi ansiRapidBlinkGray    ctermfg=DarkGray      guifg=DarkGray                                        cterm=standout     gui=undercurl
+   execute 'hi ansiRapidBlink                                                                              cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkBlack   ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkRed     ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkGreen   ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkYellow  ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkBlue    ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkMagenta ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkCyan    ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkWhite   ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=standout     gui=undercurl'
+   execute 'hi ansiRapidBlinkGray    ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=standout     gui=undercurl'
 
-   hi ansiRV                                                                                      cterm=reverse      gui=reverse
-   hi ansiRVBlack           ctermfg=Black      guifg=Black                                        cterm=reverse      gui=reverse
-   hi ansiRVRed             ctermfg=DarkRed        guifg=DarkRed                                          cterm=reverse      gui=reverse
-   hi ansiRVGreen           ctermfg=DarkGreen      guifg=DarkGreen                                        cterm=reverse      gui=reverse
-   hi ansiRVYellow          ctermfg=DarkYellow     guifg=DarkYellow                                       cterm=reverse      gui=reverse
-   hi ansiRVBlue            ctermfg=DarkBlue       guifg=DarkBlue                                         cterm=reverse      gui=reverse
-   hi ansiRVMagenta         ctermfg=DarkMagenta    guifg=DarkMagenta                                      cterm=reverse      gui=reverse
-   hi ansiRVCyan            ctermfg=DarkCyan       guifg=DarkCyan                                         cterm=reverse      gui=reverse
-   hi ansiRVWhite           ctermfg=LightGray      guifg=LightGray                                        cterm=reverse      gui=reverse
-   hi ansiRVGray            ctermfg=DarkGray      guifg=DarkGray                                        cterm=reverse      gui=reverse
+   execute 'hi ansiRV                                                                                      cterm=reverse      gui=reverse'
+   execute 'hi ansiRVBlack           ctermfg=0      guifg=' . g:ansi_Black . '                                        cterm=reverse      gui=reverse'
+   execute 'hi ansiRVRed             ctermfg=1        guifg=' . g:ansi_DarkRed . '                                          cterm=reverse      gui=reverse'
+   execute 'hi ansiRVGreen           ctermfg=2      guifg=' . g:ansi_DarkGreen . '                                        cterm=reverse      gui=reverse'
+   execute 'hi ansiRVYellow          ctermfg=3     guifg=' . g:ansi_DarkYellow . '                                       cterm=reverse      gui=reverse'
+   execute 'hi ansiRVBlue            ctermfg=4       guifg=' . g:ansi_DarkBlue . '                                         cterm=reverse      gui=reverse'
+   execute 'hi ansiRVMagenta         ctermfg=5    guifg=' . g:ansi_DarkMagenta . '                                      cterm=reverse      gui=reverse'
+   execute 'hi ansiRVCyan            ctermfg=6       guifg=' . g:ansi_DarkCyan . '                                         cterm=reverse      gui=reverse'
+   execute 'hi ansiRVWhite           ctermfg=15      guifg=' . g:ansi_LightGray . '                                        cterm=reverse      gui=reverse'
+   execute 'hi ansiRVGray            ctermfg=7      guifg=' . g:ansi_DarkGray . '                                        cterm=reverse      gui=reverse'
 
-   hi ansiBoldDefault         ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=bold         gui=bold
-   hi ansiUnderlineDefault    ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=underline    gui=underline
-   hi ansiBlackDefault        ctermfg=Black          ctermbg=NONE      guifg=Black          guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiRedDefault          ctermfg=DarkRed        ctermbg=NONE      guifg=DarkRed        guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiGreenDefault        ctermfg=DarkGreen      ctermbg=NONE      guifg=DarkGreen      guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiYellowDefault       ctermfg=DarkYellow     ctermbg=NONE      guifg=DarkYellow     guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiBlueDefault         ctermfg=DarkBlue       ctermbg=NONE      guifg=DarkBlue       guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiMagentaDefault      ctermfg=DarkMagenta    ctermbg=NONE      guifg=DarkMagenta    guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiCyanDefault         ctermfg=DarkCyan       ctermbg=NONE      guifg=DarkCyan       guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiWhiteDefault        ctermfg=LightGray      ctermbg=NONE      guifg=LightGray      guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiGrayDefault         ctermfg=DarkGray       ctermbg=NONE      guifg=DarkGray       guibg=NONE    cterm=NONE         gui=NONE
+   execute 'hi ansiBoldDefault         ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=bold         gui=bold'
+   execute 'hi ansiUnderlineDefault    ctermfg=NONE           ctermbg=NONE      guifg=NONE           guibg=NONE    cterm=underline    gui=underline'
+   execute 'hi ansiBlackDefault        ctermfg=0          ctermbg=NONE      guifg=' . g:ansi_Black . '          guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedDefault          ctermfg=1        ctermbg=NONE      guifg=' . g:ansi_DarkRed . '        guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenDefault        ctermfg=2      ctermbg=NONE      guifg=' . g:ansi_DarkGreen . '      guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowDefault       ctermfg=3     ctermbg=NONE      guifg=' . g:ansi_DarkYellow . '     guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueDefault         ctermfg=4       ctermbg=NONE      guifg=' . g:ansi_DarkBlue . '       guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaDefault      ctermfg=5    ctermbg=NONE      guifg=' . g:ansi_DarkMagenta . '    guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanDefault         ctermfg=6       ctermbg=NONE      guifg=' . g:ansi_DarkCyan . '       guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteDefault        ctermfg=15      ctermbg=NONE      guifg=' . g:ansi_LightGray . '      guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayDefault         ctermfg=7       ctermbg=NONE      guifg=' . g:ansi_DarkGray . '       guibg=NONE    cterm=NONE         gui=NONE'
 
-   hi ansiDefaultDefault      ctermfg=NONE      ctermbg=NONE       guifg=NONE       guibg=NONE    cterm=NONE         gui=NONE
-   hi ansiDefaultBlack        ctermfg=NONE      ctermbg=Black      guifg=NONE       guibg=Black   cterm=NONE         gui=NONE
-   hi ansiDefaultRed          ctermfg=NONE        ctermbg=DarkRed      guifg=NONE        guibg=DarkRed    cterm=NONE         gui=NONE
-   hi ansiDefaultGreen        ctermfg=NONE      ctermbg=DarkGreen      guifg=NONE      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiDefaultYellow       ctermfg=NONE     ctermbg=DarkYellow      guifg=NONE     guibg=DarkYellow    cterm=NONE         gui=NONE
-   hi ansiDefaultBlue         ctermfg=NONE       ctermbg=DarkBlue      guifg=NONE       guibg=DarkBlue    cterm=NONE         gui=NONE
-   hi ansiDefaultMagenta      ctermfg=NONE    ctermbg=DarkMagenta      guifg=NONE    guibg=DarkMagenta    cterm=NONE         gui=NONE
-   hi ansiDefaultCyan         ctermfg=NONE       ctermbg=DarkCyan      guifg=NONE       guibg=DarkCyan    cterm=NONE         gui=NONE
-   hi ansiDefaultWhite        ctermfg=NONE      ctermbg=LightGray      guifg=NONE      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiDefaultGray         ctermfg=NONE      ctermbg=DarkGray       guifg=NONE      guibg=DarkGray     cterm=NONE         gui=NONE
+   execute 'hi ansiDefaultDefault      ctermfg=NONE      ctermbg=NONE       guifg=NONE       guibg=NONE    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultBlack        ctermfg=NONE      ctermbg=0      guifg=NONE       guibg=' . g:ansi_Black . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultRed          ctermfg=NONE        ctermbg=1      guifg=NONE        guibg=' . g:ansi_DarkRed . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultGreen        ctermfg=NONE      ctermbg=2      guifg=NONE      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultYellow       ctermfg=NONE     ctermbg=3      guifg=NONE     guibg=' . g:ansi_DarkYellow . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultBlue         ctermfg=NONE       ctermbg=4      guifg=NONE       guibg=' . g:ansi_DarkBlue . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultMagenta      ctermfg=NONE    ctermbg=5      guifg=NONE    guibg=' . g:ansi_DarkMagenta . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultCyan         ctermfg=NONE       ctermbg=6      guifg=NONE       guibg=' . g:ansi_DarkCyan . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultWhite        ctermfg=NONE      ctermbg=15      guifg=NONE      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiDefaultGray         ctermfg=NONE      ctermbg=7       guifg=NONE      guibg=' . g:ansi_DarkGray . '     cterm=NONE         gui=NONE'
  
-   hi ansiBlackBlack        ctermfg=Black      ctermbg=Black      guifg=Black      guibg=Black    cterm=NONE         gui=NONE
-   hi ansiRedBlack          ctermfg=DarkRed        ctermbg=Black      guifg=DarkRed        guibg=Black    cterm=NONE         gui=NONE
-   hi ansiGreenBlack        ctermfg=DarkGreen      ctermbg=Black      guifg=DarkGreen      guibg=Black    cterm=NONE         gui=NONE
-   hi ansiYellowBlack       ctermfg=DarkYellow     ctermbg=Black      guifg=DarkYellow     guibg=Black    cterm=NONE         gui=NONE
-   hi ansiBlueBlack         ctermfg=DarkBlue       ctermbg=Black      guifg=DarkBlue       guibg=Black    cterm=NONE         gui=NONE
-   hi ansiMagentaBlack      ctermfg=DarkMagenta    ctermbg=Black      guifg=DarkMagenta    guibg=Black    cterm=NONE         gui=NONE
-   hi ansiCyanBlack         ctermfg=DarkCyan       ctermbg=Black      guifg=DarkCyan       guibg=Black    cterm=NONE         gui=NONE
-   hi ansiWhiteBlack        ctermfg=LightGray      ctermbg=Black      guifg=LightGray      guibg=Black    cterm=NONE         gui=NONE
-   hi ansiGrayBlack         ctermfg=DarkGray      ctermbg=Black      guifg=DarkGray      guibg=Black    cterm=NONE         gui=NONE
+   execute 'hi ansiBlackBlack        ctermfg=0      ctermbg=0      guifg=' . g:ansi_Black . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedBlack          ctermfg=1        ctermbg=0      guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenBlack        ctermfg=2      ctermbg=0      guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowBlack       ctermfg=3     ctermbg=0      guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueBlack         ctermfg=4       ctermbg=0      guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaBlack      ctermfg=5    ctermbg=0      guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanBlack         ctermfg=6       ctermbg=0      guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteBlack        ctermfg=15      ctermbg=0      guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayBlack         ctermfg=7      ctermbg=0      guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_Black . '    cterm=NONE         gui=NONE'
 
-   hi ansiBlackRed          ctermfg=Black      ctermbg=DarkRed        guifg=Black      guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiRedRed            ctermfg=DarkRed        ctermbg=DarkRed        guifg=DarkRed        guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiGreenRed          ctermfg=DarkGreen      ctermbg=DarkRed        guifg=DarkGreen      guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiYellowRed         ctermfg=DarkYellow     ctermbg=DarkRed        guifg=DarkYellow     guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiBlueRed           ctermfg=DarkBlue       ctermbg=DarkRed        guifg=DarkBlue       guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiMagentaRed        ctermfg=DarkMagenta    ctermbg=DarkRed        guifg=DarkMagenta    guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiCyanRed           ctermfg=DarkCyan       ctermbg=DarkRed        guifg=DarkCyan       guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiWhiteRed          ctermfg=LightGray      ctermbg=DarkRed        guifg=LightGray      guibg=DarkRed      cterm=NONE         gui=NONE
-   hi ansiGrayRed           ctermfg=DarkGray      ctermbg=DarkRed        guifg=DarkGray      guibg=DarkRed      cterm=NONE         gui=NONE
+   execute 'hi ansiBlackRed          ctermfg=0      ctermbg=1        guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiRedRed            ctermfg=1        ctermbg=1        guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenRed          ctermfg=2      ctermbg=1        guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowRed         ctermfg=3     ctermbg=1        guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueRed           ctermfg=4       ctermbg=1        guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaRed        ctermfg=5    ctermbg=1        guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanRed           ctermfg=6       ctermbg=1        guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteRed          ctermfg=15      ctermbg=1        guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayRed           ctermfg=7      ctermbg=1        guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_DarkRed . '      cterm=NONE         gui=NONE'
 
-   hi ansiBlackGreen        ctermfg=Black      ctermbg=DarkGreen      guifg=Black      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiRedGreen          ctermfg=DarkRed        ctermbg=DarkGreen      guifg=DarkRed        guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiGreenGreen        ctermfg=DarkGreen      ctermbg=DarkGreen      guifg=DarkGreen      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiYellowGreen       ctermfg=DarkYellow     ctermbg=DarkGreen      guifg=DarkYellow     guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiBlueGreen         ctermfg=DarkBlue       ctermbg=DarkGreen      guifg=DarkBlue       guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiMagentaGreen      ctermfg=DarkMagenta    ctermbg=DarkGreen      guifg=DarkMagenta    guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiCyanGreen         ctermfg=DarkCyan       ctermbg=DarkGreen      guifg=DarkCyan       guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiWhiteGreen        ctermfg=LightGray      ctermbg=DarkGreen      guifg=LightGray      guibg=DarkGreen    cterm=NONE         gui=NONE
-   hi ansiGrayGreen         ctermfg=DarkGray      ctermbg=DarkGreen      guifg=DarkGray      guibg=DarkGreen    cterm=NONE         gui=NONE
+   execute 'hi ansiBlackGreen        ctermfg=0      ctermbg=2      guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedGreen          ctermfg=1        ctermbg=2      guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenGreen        ctermfg=2      ctermbg=2      guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowGreen       ctermfg=3     ctermbg=2      guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueGreen         ctermfg=4       ctermbg=2      guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaGreen      ctermfg=5    ctermbg=2      guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanGreen         ctermfg=6       ctermbg=2      guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteGreen        ctermfg=15      ctermbg=2      guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayGreen         ctermfg=7      ctermbg=2      guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_DarkGreen . '    cterm=NONE         gui=NONE'
 
-   hi ansiBlackYellow       ctermfg=Black      ctermbg=DarkYellow     guifg=Black      guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiRedYellow         ctermfg=DarkRed        ctermbg=DarkYellow     guifg=DarkRed        guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiGreenYellow       ctermfg=DarkGreen      ctermbg=DarkYellow     guifg=DarkGreen      guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiYellowYellow      ctermfg=DarkYellow     ctermbg=DarkYellow     guifg=DarkYellow     guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiBlueYellow        ctermfg=DarkBlue       ctermbg=DarkYellow     guifg=DarkBlue       guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiMagentaYellow     ctermfg=DarkMagenta    ctermbg=DarkYellow     guifg=DarkMagenta    guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiCyanYellow        ctermfg=DarkCyan       ctermbg=DarkYellow     guifg=DarkCyan       guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiWhiteYellow       ctermfg=LightGray      ctermbg=DarkYellow     guifg=LightGray      guibg=DarkYellow   cterm=NONE         gui=NONE
-   hi ansiGrayYellow        ctermfg=DarkGray      ctermbg=DarkYellow     guifg=DarkGray      guibg=DarkYellow   cterm=NONE         gui=NONE
+   execute 'hi ansiBlackYellow       ctermfg=0      ctermbg=3     guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiRedYellow         ctermfg=1        ctermbg=3     guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenYellow       ctermfg=2      ctermbg=3     guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowYellow      ctermfg=3     ctermbg=3     guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueYellow        ctermfg=4       ctermbg=3     guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaYellow     ctermfg=5    ctermbg=3     guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanYellow        ctermfg=6       ctermbg=3     guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteYellow       ctermfg=15      ctermbg=3     guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayYellow        ctermfg=7      ctermbg=3     guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_DarkYellow . '   cterm=NONE         gui=NONE'
 
-   hi ansiBlackBlue         ctermfg=Black      ctermbg=DarkBlue       guifg=Black      guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiRedBlue           ctermfg=DarkRed        ctermbg=DarkBlue       guifg=DarkRed        guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiGreenBlue         ctermfg=DarkGreen      ctermbg=DarkBlue       guifg=DarkGreen      guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiYellowBlue        ctermfg=DarkYellow     ctermbg=DarkBlue       guifg=DarkYellow     guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiBlueBlue          ctermfg=DarkBlue       ctermbg=DarkBlue       guifg=DarkBlue       guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiMagentaBlue       ctermfg=DarkMagenta    ctermbg=DarkBlue       guifg=DarkMagenta    guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiCyanBlue          ctermfg=DarkCyan       ctermbg=DarkBlue       guifg=DarkCyan       guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiWhiteBlue         ctermfg=LightGray      ctermbg=DarkBlue       guifg=LightGray      guibg=DarkBlue     cterm=NONE         gui=NONE
-   hi ansiGrayBlue          ctermfg=DarkGray      ctermbg=DarkBlue       guifg=DarkGray      guibg=DarkBlue     cterm=NONE         gui=NONE
+   execute 'hi ansiBlackBlue         ctermfg=0      ctermbg=4       guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiRedBlue           ctermfg=1        ctermbg=4       guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenBlue         ctermfg=2      ctermbg=4       guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowBlue        ctermfg=3     ctermbg=4       guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueBlue          ctermfg=4       ctermbg=4       guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaBlue       ctermfg=5    ctermbg=4       guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanBlue          ctermfg=6       ctermbg=4       guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteBlue         ctermfg=15      ctermbg=4       guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayBlue          ctermfg=7      ctermbg=4       guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_DarkBlue . '     cterm=NONE         gui=NONE'
 
-   hi ansiBlackMagenta      ctermfg=Black      ctermbg=DarkMagenta    guifg=Black      guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiRedMagenta        ctermfg=DarkRed        ctermbg=DarkMagenta    guifg=DarkRed        guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiGreenMagenta      ctermfg=DarkGreen      ctermbg=DarkMagenta    guifg=DarkGreen      guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiYellowMagenta     ctermfg=DarkYellow     ctermbg=DarkMagenta    guifg=DarkYellow     guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiBlueMagenta       ctermfg=DarkBlue       ctermbg=DarkMagenta    guifg=DarkBlue       guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiMagentaMagenta    ctermfg=DarkMagenta    ctermbg=DarkMagenta    guifg=DarkMagenta    guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiCyanMagenta       ctermfg=DarkCyan       ctermbg=DarkMagenta    guifg=DarkCyan       guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiWhiteMagenta      ctermfg=LightGray      ctermbg=DarkMagenta    guifg=LightGray      guibg=DarkMagenta  cterm=NONE         gui=NONE
-   hi ansiGrayMagenta       ctermfg=DarkGray      ctermbg=DarkMagenta    guifg=DarkGray      guibg=DarkMagenta  cterm=NONE         gui=NONE
+   execute 'hi ansiBlackMagenta      ctermfg=0      ctermbg=5    guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiRedMagenta        ctermfg=1        ctermbg=5    guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenMagenta      ctermfg=2      ctermbg=5    guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowMagenta     ctermfg=3     ctermbg=5    guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueMagenta       ctermfg=4       ctermbg=5    guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaMagenta    ctermfg=5    ctermbg=5    guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanMagenta       ctermfg=6       ctermbg=5    guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteMagenta      ctermfg=15      ctermbg=5    guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayMagenta       ctermfg=7      ctermbg=5    guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_DarkMagenta . '  cterm=NONE         gui=NONE'
 
-   hi ansiBlackCyan         ctermfg=Black      ctermbg=DarkCyan       guifg=Black      guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiRedCyan           ctermfg=DarkRed        ctermbg=DarkCyan       guifg=DarkRed        guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiGreenCyan         ctermfg=DarkGreen      ctermbg=DarkCyan       guifg=DarkGreen      guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiYellowCyan        ctermfg=DarkYellow     ctermbg=DarkCyan       guifg=DarkYellow     guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiBlueCyan          ctermfg=DarkBlue       ctermbg=DarkCyan       guifg=DarkBlue       guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiMagentaCyan       ctermfg=DarkMagenta    ctermbg=DarkCyan       guifg=DarkMagenta    guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiCyanCyan          ctermfg=DarkCyan       ctermbg=DarkCyan       guifg=DarkCyan       guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiWhiteCyan         ctermfg=LightGray      ctermbg=DarkCyan       guifg=LightGray      guibg=DarkCyan     cterm=NONE         gui=NONE
-   hi ansiGrayCyan          ctermfg=DarkGray      ctermbg=DarkCyan       guifg=DarkGray      guibg=DarkCyan     cterm=NONE         gui=NONE
+   execute 'hi ansiBlackCyan         ctermfg=0      ctermbg=6       guifg=' . g:ansi_Black . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiRedCyan           ctermfg=1        ctermbg=6       guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenCyan         ctermfg=2      ctermbg=6       guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowCyan        ctermfg=3     ctermbg=6       guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueCyan          ctermfg=4       ctermbg=6       guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaCyan       ctermfg=5    ctermbg=6       guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanCyan          ctermfg=6       ctermbg=6       guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteCyan         ctermfg=15      ctermbg=6       guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayCyan          ctermfg=7      ctermbg=6       guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_DarkCyan . '     cterm=NONE         gui=NONE'
 
-   hi ansiBlackWhite        ctermfg=Black      ctermbg=LightGray      guifg=Black      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiRedWhite          ctermfg=DarkRed        ctermbg=LightGray      guifg=DarkRed        guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiGreenWhite        ctermfg=DarkGreen      ctermbg=LightGray      guifg=DarkGreen      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiYellowWhite       ctermfg=DarkYellow     ctermbg=LightGray      guifg=DarkYellow     guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiBlueWhite         ctermfg=DarkBlue       ctermbg=LightGray      guifg=DarkBlue       guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiMagentaWhite      ctermfg=DarkMagenta    ctermbg=LightGray      guifg=DarkMagenta    guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiCyanWhite         ctermfg=DarkCyan       ctermbg=LightGray      guifg=DarkCyan       guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiWhiteWhite        ctermfg=LightGray      ctermbg=LightGray      guifg=LightGray      guibg=LightGray    cterm=NONE         gui=NONE
-   hi ansiGrayWhite         ctermfg=DarkGray      ctermbg=LightGray      guifg=DarkGray      guibg=LightGray    cterm=NONE         gui=NONE
+   execute 'hi ansiBlackWhite        ctermfg=0      ctermbg=15      guifg=' . g:ansi_Black . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiRedWhite          ctermfg=1        ctermbg=15      guifg=' . g:ansi_DarkRed . '        guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGreenWhite        ctermfg=2      ctermbg=15      guifg=' . g:ansi_DarkGreen . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiYellowWhite       ctermfg=3     ctermbg=15      guifg=' . g:ansi_DarkYellow . '     guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiBlueWhite         ctermfg=4       ctermbg=15      guifg=' . g:ansi_DarkBlue . '       guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiMagentaWhite      ctermfg=5    ctermbg=15      guifg=' . g:ansi_DarkMagenta . '    guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiCyanWhite         ctermfg=6       ctermbg=15      guifg=' . g:ansi_DarkCyan . '       guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiWhiteWhite        ctermfg=15      ctermbg=15      guifg=' . g:ansi_LightGray . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
+   execute 'hi ansiGrayWhite         ctermfg=7      ctermbg=15      guifg=' . g:ansi_DarkGray . '      guibg=' . g:ansi_LightGray . '    cterm=NONE         gui=NONE'
   endif
 "  call Dret("AnsiEsc#AnsiEsc")
 endfun
