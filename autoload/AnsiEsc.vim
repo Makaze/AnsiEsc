@@ -1,8 +1,8 @@
 " AnsiEsc.vim: Uses vim 7.0 syntax highlighting
 " Language:		Text with ansi escape sequences
-" Maintainer:	Charles E. Campbell <NdrOchipS@PcampbellAfamily.Mbiz>
-" Version:		13i	ASTRO-ONLY
-" Date:		Apr 02, 2015
+" Maintainer:	Makaze <christopherslane.work@gmail.com>
+" Version:		1.4.0
+" Date:		Apr 19, 2024
 "
 " Usage: :AnsiEsc  (toggles)
 " Note:   This plugin requires +conceal
@@ -15,7 +15,7 @@
 if exists("g:loaded_AnsiEsc")
  finish
 endif
-let g:loaded_AnsiEsc = "v13i"
+let g:loaded_AnsiEsc = "v1.4.0"
 if v:version < 700
  echohl WarningMsg
  echo "***warning*** this version of AnsiEsc needs vim 7.0"
@@ -24,6 +24,35 @@ if v:version < 700
 endif
 let s:keepcpo= &cpo
 set cpo&vim
+
+" Set default colors
+" Returns the #rrggbb hex value for a HL group.
+"
+" @function GetHLHex
+" @description Returns the #rrggbb hex value for a HL group.
+" @poram group The highlight group to get. e.g. 'Comment'
+" @param ground The value to get ('fg' or 'bg').
+" @return The #rrggbb color value.
+function! GetHLHex(group, ground)
+    " Get the syntax ID of the highlight group
+    let syn_id = synIDtrans(hlID(a:group))
+
+    " Get the RGB values of the foreground color in GUI mode
+    let hex_color = synIDattr(syn_id, a:ground . '#')
+
+    " Return the hex color
+    return hex_color
+endfunction
+
+let g:ansi_Black = '#1d2021'
+let g:ansi_DarkRed = '#cc241d'
+let g:ansi_DarkGreen = '#98971a'
+let g:ansi_DarkYellow = '#d79921'
+let g:ansi_DarkBlue = '#458588'
+let g:ansi_DarkMagenta = '#b16286'
+let g:ansi_DarkCyan = '#689d6a'
+let g:ansi_LightGray = '#ebdbb2'
+let g:ansi_DarkGray = '#a89984'
 
 " ---------------------------------------------------------------------
 " AnsiEsc#AnsiEsc: toggles ansi-escape code visualization {{{2
