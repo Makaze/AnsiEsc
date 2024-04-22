@@ -10,7 +10,39 @@ This is a [Vim script №302: AnsiEsc.vim](http://www.vim.org/scripts/script.php
 updated to [latest author's version](http://www.drchip.org/astronaut/vim/index.html#ANSIESC)
 with several fixes/improvements.
 
-Download .zip/.vmb from http://www.vim.org/scripts/script.php?script_id=4979
+Now with custom colors!
+
+## Changing Colors
+
+```vim
+" Returns the #rrggbb hex value for a HL group.
+"
+" @function GetHLHex
+" @description Returns the #rrggbb hex value for a HL group.
+" @poram group The highlight group to get. e.g. 'Comment'
+" @param ground The value to get ('fg' or 'bg').
+" @return The #rrggbb color value.
+function! GetHLHex(group, ground)
+    " Get the syntax ID of the highlight group
+    let syn_id = synIDtrans(hlID(a:group))
+
+    " Get the RGB values of the foreground color in GUI mode
+    let hex_color = synIDattr(syn_id, a:ground . '#')
+
+    " Return the hex color
+    return hex_color
+endfunction
+
+let g:ansi_Black = '#1d2021'
+let g:ansi_DarkRed = '#cc241d'
+let g:ansi_DarkGreen = '#98971a'
+let g:ansi_DarkYellow = '#d79921'
+let g:ansi_DarkBlue = '#458588'
+let g:ansi_DarkMagenta = '#b16286'
+let g:ansi_DarkCyan = '#689d6a'
+let g:ansi_LightGray = '#ebdbb2'
+let g:ansi_DarkGray = '#a89984'
+```
 
 ## Changes
 
