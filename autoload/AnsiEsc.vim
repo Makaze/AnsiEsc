@@ -128,7 +128,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    endif
   endif
 
-  syn clear
+  " syn clear
 
   if has("conceal")
    syn match ansiConceal		contained conceal	"\e\[\(\d*;\)*\d*[A-Za-z]"
