@@ -1,0 +1,25 @@
+  2024-09-04T19:10:53.185636Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", fapi.binance.com)
+    at /home/v/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-util-0.1.7/src/client/legacy/pool.rs:396
+    in discretionary_engine::exchange_apis::binance::signed_request with http_method: DELETE, endpoint_str: "https://fapi.binance.com/fapi/v1/order", params: {"orderId": "44157697737", "recvWindow": "60000", "symbol": "ADAUSDT"}
+
+  2024-09-04T19:10:53.185939Z  WARN discretionary_engine::exchange_apis::binance: Tried to close an order not existing on the remote: 
+   0: [91mUnexpected API response[0m
+   1: [91m{
+        "code": -2011,
+        "msg": "Unknown order sent."
+      }[0m
+
+Location:
+   [35mdiscretionary_engine/src/utils.rs[0m:[35m95[0m
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SPANTRACE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   0: [91mdiscretionary_engine::exchange_apis::binance[0m[91m::[0m[91msigned_request[0m with [96mhttp_method=DELETE endpoint_str="https://fapi.binance.com/fapi/v1/order" params={"orderId": "44157697737", "recvWindow": "60000", "symbol": "ADAUSDT"}[0m
+      at [35mdiscretionary_engine/src/exchange_apis/binance/mod.rs[0m:[35m90[0m
+
+Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
+Run with RUST_BACKTRACE=full to include source snippets.. Assuming all are closed and moving on (HACK).
+    at discretionary_engine/src/exchange_apis/binance/mod.rs:485
+
+  2024-09-04T19:10:53.186014Z DEBUG discretionary_engine::exchange_apis::binance: closed orders
+    at discretionary_engine/src/exchange_apis/binance/mod.rs:495
